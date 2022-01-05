@@ -44,3 +44,7 @@
 .Product-list {
   margin-top: 10px;
 }
+
+.ProductCard-price {
+  font-weight: bold;
+}

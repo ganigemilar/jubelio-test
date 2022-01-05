@@ -1,28 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import ProductList from './Dashboard'
 import reportWebVitals from './reportWebVitals';
 
 import { Navbar, Nav, Container } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import App from './App';
+import ProductList from './components/Dashboard'
+import AppNavbar from './components/AppNavbar'
+
 ReactDOM.render(
   <React.StrictMode>
-    <Navbar fixed="top" bg="primary" variant="dark">
+    {/* <Navbar fixed="top" bg="primary" variant="dark">
       <Container>
         <Navbar.Brand href="#home">Navbar</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#home">Add Product</Nav.Link>
+          <Nav.Link href="#home" onClick={onClickAddProduct}>Add Product</Nav.Link>
         </Nav>
       </Container>
-    </Navbar>
+    </Navbar> */}
     {/* <App /> */}
-    <Container className="Product-content">
-      <ProductList />
-    </Container>
+    {/* <Container className="Product-content">
+      <ProductList showAddProduct={showAddProduct}/>
+    </Container> */}
+
+    <AppNavbar />
   </React.StrictMode>,
   document.getElementById('root')
 );

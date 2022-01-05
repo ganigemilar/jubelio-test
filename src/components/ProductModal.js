@@ -5,11 +5,25 @@ class ProductModal extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            title: this.props.title,
+            id: this.props.product?.id ?? null,
             name: this.props.product?.name ?? "",
             sku: this.props.product?.sku ?? "",
+            image: this.props.product?.image ?? "no_product.png",
             price: this.props.product?.price ?? 0,
             description: this.props.product?.description ?? ""
         }
+    }
+
+    fillForm(product) {
+        this.setState({
+            id: product?.id ?? null,
+            name: product?.name ?? "",
+            sku: product?.sku ?? "",
+            image: product?.image ?? "no_product.png",
+            price: product?.price ?? 0,
+            description: product?.description ?? ""
+        })
     }
 
     render() {
@@ -22,7 +36,7 @@ class ProductModal extends React.Component {
                 centered
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>{this.props.title}</Modal.Title>
+                    <Modal.Title>{this.state.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
